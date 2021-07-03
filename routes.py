@@ -7,7 +7,7 @@ start = timeit.default_timer()
 # Locate the most similar neighbors
 def get_neighbors(fixed_paths, suggested_path):
 
-	min_dist =1000000
+	min_dist = 1000000
 	for fixed_path in fixed_paths:
 		dist = sqrt((int(fixed_path[1])- int(suggested_path[1]))**2 + (int(fixed_path[2]) - int(suggested_path[2]))**2)
 		if dist < min_dist: 
@@ -19,7 +19,6 @@ def get_neighbors(fixed_paths, suggested_path):
 
 
 def get_nearest_stations(input_file,output_file):
-
 	fixed_paths = list()
 	output_file = open(output_file, "a")
 
@@ -40,7 +39,6 @@ def get_nearest_stations(input_file,output_file):
 			output_file.write(suggested_path[0]+ ' '+ neareast_path[0][0]+ "\n")
 
 
-
 	output_file.close()
 
 
@@ -54,7 +52,4 @@ output = get_nearest_stations('input.txt','output.txt')
 stop = timeit.default_timer()
 print("Result is written to output.txt Time Taken is : ", stop - start)  
 
-
-
-#remove taken point
 
